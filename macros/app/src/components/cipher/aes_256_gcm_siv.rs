@@ -46,7 +46,7 @@ pub fn cipher_aes_256_gcm_siv(input: &DeriveInput, field: &Field) -> TokenStream
               pub fn #aes_256_gcm_siv_encrypt_ident(&self) -> Result<(Vec<u8>, Vec<u8>), String>
             {
                 use aes_gcm_siv::aead::{Aead, KeyInit};
-                use rand::Rng;
+                use rand::RngExt;
                 use rkyv::rancor::Error as RkyvError;
 
                 let value = &self.#field_ident;

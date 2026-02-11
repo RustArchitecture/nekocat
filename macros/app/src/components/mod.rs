@@ -20,7 +20,7 @@ pub mod path2enum;
     feature = "print",
     feature = "search",
     feature = "sql",
-    feature = "pqcrypto",
+    //feature = "pqcrypto",
     feature = "path2enum"
 ))]
 pub mod prelude;

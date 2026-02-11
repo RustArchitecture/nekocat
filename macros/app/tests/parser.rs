@@ -1,5 +1,5 @@
 #![cfg(feature = "parser")]
-use neko_cat_macros::Parser;
+use nekocatmacrosapp::Parser;
 use rkyv::{Archive, Deserialize, Serialize};
 
 #[derive(Parser, Archive, Serialize, Deserialize, PartialEq, Eq, Debug, Clone)]

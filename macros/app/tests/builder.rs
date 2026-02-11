@@ -1,5 +1,5 @@
 #![cfg(feature = "builder")]
-use neko_cat_macros::Builder;
+use nekocatmacrosapp::Builder;
 
 static ID: &str = "123e4567-e89b-12d3-a456-426614174000";
 const NAME: &str = "John Doe";
@@ -72,7 +72,6 @@ fn dynamic_user() -> Result<(), String> {
     println!("{user:#?}");
     Ok(())
 }
-
 
 #[test]
 fn invalid_email() {

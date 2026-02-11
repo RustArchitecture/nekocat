@@ -19,28 +19,29 @@ exclude = [
 proc-macro = true
 
 [dependencies]
-syn = { version = "2", features = ["full", "visit", "visit-mut"] }
-quote = "1"
-proc-macro2 =  "1"
+syn = { version = "2.0.114", features = ["full", "visit", "visit-mut"] }
+quote = "1.0.44"
+proc-macro2 =  "1.0.106"
 
 [dev-dependencies]
-regex = { version = "1"}
-tokio = { version = "1", features = ["macros", "rt-multi-thread"]}
-chrono = { version = "0"}
-colorful = { version = "0"}
-hex = { version = "0"}
-rand = { version = "0"}
-pqcrypto-mlkem = { version = "0"}
-pqcrypto-mldsa = { version = "0"}
-pqcrypto-traits = { version = "0"}
-aes-gcm-siv = { version = "0"}
-chacha20poly1305 = { version = "0"}
-argon2 = { version = "0"}
-serde = { version = "1", features = ["derive"]}
-tokio-postgres = "0"
-rkyv = "0"
-sha2 = "0"
-hkdf = "0"
+regex = { version = "1.12.3"}
+tokio = { version = "1.49.0", features = ["macros", "rt-multi-thread"]}
+chrono = { version = "0.4.43"}
+colorful = { version = "0.3.2"}
+hex = { version = "0.4.3"}
+rand = { version = "0.10.0"}
+#pqcrypto-mlkem = { version = "0.1.1"}
+#pqcrypto-mldsa = { version = "0.1.2"}
+#pqcrypto-traits = { version = "0.3.5"}
+#sha2 = "0.10.9"
+#hkdf = "0.12.4"
+aes-gcm-siv = { version = "0.11.1"}
+chacha20poly1305 = { version = "0.10.1"}
+argon2 = { version = "0.5.3"}
+serde = { version = "1.0.228", features = ["derive"]}
+tokio-postgres = "0.7.16"
+rkyv = "0.8.15"
+
 
 [features]
 default = ["full"]
@@ -49,11 +50,11 @@ cipher = ["chacha", "argon", "aes"]
 aes = []
 argon = []
 chacha = []
-pqcrypto = []
+#pqcrypto = []
 print = []
 math = []
 parser = []
 search = []
 sql = []
 path2enum = []
-full = ["builder", "pqcrypto", "aes", "cipher", "argon", "chacha", "print", "math", "parser", "search", "sql", "path2enum"]
+full = ["builder", "aes", "cipher", "argon", "chacha", "print", "math", "parser", "search", "sql", "path2enum"]

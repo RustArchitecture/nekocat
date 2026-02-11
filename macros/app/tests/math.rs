@@ -1,5 +1,5 @@
 #![cfg(all(feature = "math", feature = "builder"))]
-use neko_cat_macros::{Builder, Math};
+use nekocatmacrosapp::{Builder, Math};
 
 #[derive(Debug, Builder, Math, Clone)]
 struct CalcStruct {

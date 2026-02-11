@@ -1,5 +1,5 @@
 #![cfg(feature = "cipher")]
-use neko_cat_macros::Cipher;
+use nekocatmacrosapp::Cipher;
 use rkyv::{Archive, Deserialize, Serialize};
 
 const SECRET: &str = "50e637e1245ee65705409472d7bbf32a27e760ef332d4a19aebca96328a53cfb";

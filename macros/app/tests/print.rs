@@ -1,5 +1,5 @@
 #![cfg(feature = "print")]
-use neko_cat_macros::Print;
+use nekocatmacrosapp::Print;
 
 #[derive(Debug, Print, Default, Clone)]
 #[transporter(async fn procedure() {

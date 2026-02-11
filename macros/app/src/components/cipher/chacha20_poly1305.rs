@@ -48,7 +48,7 @@ pub fn cipher_chacha20_poly1305(input: &DeriveInput, field: &Field) -> TokenStre
               pub fn #chacha20_poly1305_encrypt_ident(&self) -> Result<(Vec<u8>, Vec<u8>), String>
             {
                 use chacha20poly1305::aead::{Aead, KeyInit};
-                use rand::Rng;
+                use rand::RngExt;
                 use rkyv::rancor::Error as RkyvError;
 
                 let value = &self.#field_ident;

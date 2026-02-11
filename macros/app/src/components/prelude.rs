@@ -10,7 +10,7 @@ pub use super::cipher::prelude::*;
     feature = "print",
     feature = "search",
     feature = "sql",
-    feature = "pqcrypto",
+    //feature = "pqcrypto",
     feature = "path2enum"
 ))]
 pub use super::import::*;

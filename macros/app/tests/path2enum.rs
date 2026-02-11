@@ -1,6 +1,6 @@
 #![cfg(feature = "path2enum")]
 
-use neko_cat_macros::path2enum;
+use nekocatmacrosapp::path2enum;
 
 #[path2enum(path = "tests/assets", ext = "svg,toml")]
 pub enum PublicPaths {}

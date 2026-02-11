@@ -1,5 +1,5 @@
 #![cfg(feature = "sql")]
-use neko_cat_macros::Sql;
+use nekocatmacrosapp::Sql;
 use tokio_postgres::{Client, NoTls};
 
 #[derive(Sql)]

@@ -1,5 +1,5 @@
 #![cfg(feature = "search")]
-use neko_cat_macros::Search;
+use nekocatmacrosapp::Search;
 
 const EPS: f32 = 1e-6;
 
