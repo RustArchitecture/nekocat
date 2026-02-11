@@ -43,6 +43,38 @@ pub struct Friend {
 }
 
 #[test]
+fn default_user() {
+    let user = User::new();
+    assert_eq!(user.id, "123e4567-e89b-12d3-a456-426614174000");
+    assert_eq!(user.name, "John Doe");
+    assert_eq!(user.password, "password123");
+    assert_eq!(user.email, "johndoe@example.com");
+    assert_eq!(user.age, 18);
+    assert_eq!(user.rating, 0.0);
+    println!("{user:#?}");
+}
+
+#[test]
+fn dynamic_user() -> Result<(), String> {
+    let user = User::new()
+        .id(UserId::new("123e4567-e89b-12d3-a456-426614174000")?)
+        .name(UserName::new("John Doe")?)
+        .password(UserPassword::new("password123")?)
+        .age(UserAge::new(18)?)
+        .rating(UserRating::new(0.77)?);
+
+    assert_eq!(user.id, "123e4567-e89b-12d3-a456-426614174000");
+    assert_eq!(user.name, "John Doe");
+    assert_eq!(user.password, "password123");
+    assert_eq!(user.email, "johndoe@example.com");
+    assert_eq!(user.age, 18);
+    assert_eq!(user.rating, 0.77);
+    println!("{user:#?}");
+    Ok(())
+}
+
+
+#[test]
 fn invalid_email() {
     let res = UserEmail::new("not-an-email");
     assert!(res.is_err());
@@ -80,37 +112,6 @@ fn valid_values() -> Result<(), String> {
     let rating = UserRating::new(0.5)?;
     assert_eq!(age.0, 30);
     assert_eq!(rating.0, 0.5);
-    Ok(())
-}
-
-#[test]
-fn default_user() {
-    let user = User::new();
-    assert_eq!(user.id, "123e4567-e89b-12d3-a456-426614174000");
-    assert_eq!(user.name, "John Doe");
-    assert_eq!(user.password, "password123");
-    assert_eq!(user.email, "johndoe@example.com");
-    assert_eq!(user.age, 18);
-    assert_eq!(user.rating, 0.0);
-    println!("{user:#?}");
-}
-
-#[test]
-fn dynamic_user() -> Result<(), String> {
-    let user = User::new()
-        .id(UserId::new("123e4567-e89b-12d3-a456-426614174000")?)
-        .name(UserName::new("John Doe")?)
-        .password(UserPassword::new("password123")?)
-        .age(UserAge::new(18)?)
-        .rating(UserRating::new(0.77)?);
-
-    assert_eq!(user.id, "123e4567-e89b-12d3-a456-426614174000");
-    assert_eq!(user.name, "John Doe");
-    assert_eq!(user.password, "password123");
-    assert_eq!(user.email, "johndoe@example.com");
-    assert_eq!(user.age, 18);
-    assert_eq!(user.rating, 0.77);
-    println!("{user:#?}");
     Ok(())
 }
 
